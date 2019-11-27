@@ -2,7 +2,7 @@
 // #include <stdio.h>
 // #include <stdlib.h>
 
-void * vetorDescrescente(int *v, int tam){
+void vetorDescrescente(int *v, int tam){
     long int i;
     long int n = tam;
     
@@ -11,7 +11,7 @@ void * vetorDescrescente(int *v, int tam){
     }
 }
 
-void * vetorCrescente(int *v, int tam){
+void vetorCrescente(int *v, int tam){
     long int i;
     long int n = tam;
     
@@ -21,7 +21,7 @@ void * vetorCrescente(int *v, int tam){
 }
 
 
-void * vetorAleatorio(int *v, int tam){
+void vetorAleatorio(int *v, int tam){
     srand(time(NULL));
     long int i;
     long int n = tam;
@@ -29,8 +29,18 @@ void * vetorAleatorio(int *v, int tam){
     for (i=0; i<n; i++) {
         v[i] = rand()%100;
     }
-    
-//     for (i=0; i<n-1; i++) {
-//         printf("%ld\n", v[i]);
-//     }
+}
+
+void printArray(int *v, int tam){
+    int i;
+    for(i=0; i<tam; i++){
+        printf("%d ", v[i]);
+    }
+    printf("\n");
+}
+
+void contaTempo(clock_t t1){
+    clock_t t2;
+    t2 = clock();
+    printf("\n%.6f segundos.\n\n", (double)(t2-t1)/CLOCKS_PER_SEC);
 }
